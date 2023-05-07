@@ -1,0 +1,17 @@
+:root {
+    --gmg-exec-button-color: #ff8c00;
+    --gmg-select-button-color: #ff8c00;
+    --gmg-menu-button-color: #ff8c00;
+}
+
+.execButton:not(:disabled) {
+    background-color: var(--gmg-exec-button-color) !important;
+}
+
+.selectButton:not(:disabled) {
+    background-color: var(--gmg-select-button-color) !important;
+}
+
+.menuButton {
+    background-color: var(--gmg-menu-button-color) !important;
+}
