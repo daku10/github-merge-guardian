@@ -27,6 +27,16 @@ GitHub Merge Guardian is a browser extension that helps to prevent incorrect mer
 
 By using GitHub Merge Guardian, you can easily control the merge strategies of your pull requests. Add your custom rules to apply the appropriate merge strategy depending on the repository and branch combination.
 
+## Screenshots
+
+### How the extension works
+
+<img src="screenshots/ss1.png">
+
+### Option page
+
+<img src="screenshots/ss2.png">
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
