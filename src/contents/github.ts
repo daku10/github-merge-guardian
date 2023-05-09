@@ -114,22 +114,23 @@ const changeMenuButtonColorReset = () => {
   selectMenuButtonElement()?.classList.remove(styles.menuButton)
 }
 
+const actionObserver = new MutationObserver((_, observer) => {
+  if (selectMenuButtonElement()) {
+    observer.disconnect()
+    readAndApplySetting()
+  }
+})
+
+const bodyObserver = new MutationObserver((_, observer) => {
+  const actions = selectRootActionsElement()
+  if (actions) {
+    observer.disconnect()
+    actionObserver.observe(actions, { childList: true, subtree: true })
+  }
+})
+
 const main = () => {
-  new MutationObserver((_, observer) => {
-    const actions = selectRootActionsElement()
-    if (actions) {
-      observer.disconnect()
-      if (selectMenuButtonElement()) {
-        readAndApplySetting()
-      }
-      new MutationObserver((_, actionsObserver) => {
-        if (selectMenuButtonElement()) {
-          actionsObserver.disconnect()
-          readAndApplySetting()
-        }
-      }).observe(actions, { childList: true, subtree: true })
-    }
-  }).observe(document.body, { childList: true, subtree: true })
+  bodyObserver.observe(document.body, { childList: true, subtree: true })
 }
 
 const changeColor = (color: string) => {
