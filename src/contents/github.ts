@@ -24,7 +24,7 @@ import { readColor, readSettings } from "~lib/storage"
 import styles from "./style.module.css"
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://github.com/*/pull/*"]
+  matches: ["https://github.com/*"]
 }
 
 let abortController: AbortController | undefined = undefined
@@ -114,35 +114,22 @@ const changeMenuButtonColorReset = () => {
   selectMenuButtonElement()?.classList.remove(styles.menuButton)
 }
 
-let bodyAttached = false
-let actionsAttached = false
-
 const main = () => {
-  if (bodyAttached) {
-    return
-  }
   new MutationObserver((_, observer) => {
     const actions = selectRootActionsElement()
     if (actions) {
       observer.disconnect()
-      bodyAttached = false
       if (selectMenuButtonElement()) {
         readAndApplySetting()
-      }
-      if (actionsAttached) {
-        return
       }
       new MutationObserver((_, actionsObserver) => {
         if (selectMenuButtonElement()) {
           actionsObserver.disconnect()
-          actionsAttached = false
           readAndApplySetting()
         }
       }).observe(actions, { childList: true, subtree: true })
-      actionsAttached = true
     }
   }).observe(document.body, { childList: true, subtree: true })
-  bodyAttached = true
 }
 
 const changeColor = (color: string) => {
