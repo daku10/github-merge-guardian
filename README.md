@@ -37,6 +37,10 @@ By using GitHub Merge Guardian, you can easily control the merge strategies of y
 
 <img src="screenshots/ss2.png">
 
+## Disclaimer
+
+This extension is not affiliated with, sponsored by, or endorsed by GitHub, Inc.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
