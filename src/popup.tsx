@@ -11,7 +11,8 @@ import {
 import { QUERY_MATCHED_SETTING, UPDATE_COLOR } from "~lib/message"
 import { parseSetting } from "~lib/setting"
 import { useColor } from "~lib/storage"
-import { isObject } from "~lib/util"
+import { usePopoverPicker } from "~lib/usePopoverPicker"
+import { detectBrowser, isObject } from "~lib/util"
 
 // this can be matched pull request commits, checks and files page.
 const regex = /^https:\/\/github\.com\/[^/]+\/[^/]+\/pull\/\d+/
@@ -150,21 +151,57 @@ function IndexPopup() {
       <div className="mt-4">
         <p className="text-sm font-bold text-gh">Color</p>
         <div className="flex gap-4">
+          <ColorPickerFooter
+            color={color}
+            onChange={updateColor}
+            onChangeDefault={() => updateColor(DEFAULT_COLOR)}
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+type ColorPickerFooterProps = {
+  color: string
+  onChange: (color: string) => void
+  onChangeDefault: () => void
+}
+
+const ColorPickerFooter = ({
+  color,
+  onChange,
+  onChangeDefault
+}: ColorPickerFooterProps) => {
+  const { renderDisplay, renderPicker } = usePopoverPicker({
+    color,
+    onChange,
+    displayClassName: "w-8 h-6 rounded-lg border border-ghgrayBorder",
+    pickerClassName: "mt-4"
+  })
+
+  const isFirefox = detectBrowser() === "firefox"
+
+  return (
+    <div>
+      <div className="flex gap-4">
+        {isFirefox ? (
+          renderDisplay()
+        ) : (
           <input
             type="color"
             value={color}
-            onChange={(e) => {
-              updateColor(e.currentTarget.value)
-            }}
+            onChange={(e) => onChange(e.currentTarget.value)}
           />
-          <button
-            className="text-xs rounded-lg border border-ghgrayBorder text-gh bg-ghgray hover:bg-ghgrayHover px-2 py-1"
-            onClick={() => updateColor(DEFAULT_COLOR)}>
-            Reset to Defaults
-          </button>
-          <OptionButton className="ml-auto" />
-        </div>
+        )}
+        <button
+          className="text-xs rounded-lg border border-ghgrayBorder text-gh bg-ghgray hover:bg-ghgrayHover px-2 py-1"
+          onClick={onChangeDefault}>
+          Reset to Defaults
+        </button>
+        <OptionButton className="ml-auto" />
       </div>
+      {isFirefox && renderPicker()}
     </div>
   )
 }
