@@ -1,7 +1,2 @@
-// declare module "*.module.css" {
-//   //   interface IClassNames {
-//   //     [className: string]: string
-//   //   }
-//   //   const classNames: IClassNames
-//   //   export = classNames
-// }
+// browser extension specific code
+declare let browser: object | undefined

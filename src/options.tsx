@@ -19,6 +19,8 @@ import {
 } from "~lib/constantAndType"
 import { UPDATE_COLOR, UPDATE_SETTINGS } from "~lib/message"
 import { useColor, useSettings } from "~lib/storage"
+import { usePopoverPicker } from "~lib/usePopoverPicker"
+import { detectBrowser } from "~lib/util"
 
 const notifyUpdateSettings = (settings: Setting[]) => {
   sendToBackground<{ settings: Setting[] }>({
@@ -90,6 +92,15 @@ function IndexOptions() {
   const handleResetColor = useCallback(() => {
     handleSetColor(DEFAULT_COLOR)
   }, [handleSetColor])
+
+  const { renderDisplay, renderPicker } = usePopoverPicker({
+    color,
+    onChange: handleSetColor,
+    displayClassName: "w-16 h-8 rounded-lg border-red-300",
+    pickerClassName: "mt-4"
+  })
+
+  const isFirefox = detectBrowser() === "firefox"
 
   return (
     <div className="flex flex-col max-w-5xl mx-auto py-10">
@@ -183,18 +194,23 @@ function IndexOptions() {
         <div className="grid grid-cols-2 mt-4 gap-4 max-w-xl">
           <span className="text-lg text-gh font-normal">Color Picker</span>
           <span className="text-lg text-gh font-normal">Example</span>
-          <input
-            type="color"
-            className="w-16 h-8"
-            value={color}
-            onChange={(e) => handleSetColor(e.target.value)}
-          />
+          {isFirefox ? (
+            renderDisplay()
+          ) : (
+            <input
+              type="color"
+              className="w-16 h-8"
+              value={color}
+              onChange={(e) => handleSetColor(e.target.value)}
+            />
+          )}
           <span
             style={{ backgroundColor: color }}
             className=" text-white text-sm w-48 rounded-lg px-4 py-2">
             Merge pull request
           </span>
         </div>
+        {isFirefox && renderPicker()}
         <button
           className="self-start mt-4 text-gh border border-ghgrayBorder bg-ghgray hover:bg-ghgrayHover font-semibold rounded-lg px-4 py-2"
           onClick={handleResetColor}>
