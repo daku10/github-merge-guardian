@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.3.1](https://github.com/daku10/github-merge-guardian/compare/v1.3.0...v1.3.1) - 2023-05-14
+- Fix for firefox by @daku10 in https://github.com/daku10/github-merge-guardian/pull/19
+- fix by @daku10 in https://github.com/daku10/github-merge-guardian/pull/21
+
 ## [v1.3.0](https://github.com/daku10/github-merge-guardian/compare/v1.2.0...v1.3.0) - 2023-05-14
 - Configure Renovate by @renovate in https://github.com/daku10/github-merge-guardian/pull/1
 - add test by @daku10 in https://github.com/daku10/github-merge-guardian/pull/7
