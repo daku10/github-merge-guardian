@@ -11,8 +11,8 @@ dependencies:
     specifier: 3.2.1
     version: 3.2.1(react@18.2.0)
   '@plasmohq/messaging':
-    specifier: 0.2.1
-    version: 0.2.1(react@18.2.0)
+    specifier: 0.3.0
+    version: 0.3.0(react@18.2.0)
   '@plasmohq/storage':
     specifier: 1.6.0
     version: 1.6.0(react@18.2.0)
@@ -2193,8 +2193,8 @@ packages:
     resolution: {integrity: sha512-TdeisHX+Z0Rfez4251eCX0czcqnWO1OfurQhSQDijcmcjVU7r+IXh0svg7s+UVpCiHTagQ/JY+bnweuqnGPFHQ==}
     dev: false
 
-  /@plasmohq/messaging@0.2.1(react@18.2.0):
-    resolution: {integrity: sha512-1x569S9NRbm6l7jVnJtmLPpYQxRRx5E7/kCKbqEZbIVuqKECWjOGfuONr3wSYqZUoys1TUIF7GQ8Tf9EceKL6w==}
+  /@plasmohq/messaging@0.3.0(react@18.2.0):
+    resolution: {integrity: sha512-UKRK27AV2WKKoM0Mto5abmLbCJQ8eP0rreFK9Dx5qu6hsGX2rVaseiEOwdmTwtZnLUPIu17zjTjFtzMOb9cnyQ==}
     peerDependencies:
       react: ^16.8.6 || ^17 || ^18
     peerDependenciesMeta:
