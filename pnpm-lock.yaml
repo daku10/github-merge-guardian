@@ -1,5 +1,10 @@
 lockfileVersion: '6.0'
 
+patchedDependencies:
+  react-dom@18.2.0:
+    hash: dmvxeb6c5lh6tttdk5najzccki
+    path: patches/react-dom@18.2.0.patch
+
 dependencies:
   '@dnd-kit/core':
     specifier: 6.0.8
@@ -27,7 +32,7 @@ dependencies:
     version: 5.6.1(react-dom@18.2.0)(react@18.2.0)
   react-dom:
     specifier: 18.2.0
-    version: 18.2.0(react@18.2.0)
+    version: 18.2.0(patch_hash=dmvxeb6c5lh6tttdk5najzccki)(react@18.2.0)
 
 devDependencies:
   '@plasmohq/prettier-plugin-sort-imports':
@@ -447,7 +452,7 @@ packages:
       '@dnd-kit/accessibility': 3.0.1(react@18.2.0)
       '@dnd-kit/utilities': 3.2.1(react@18.2.0)
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.2.0(patch_hash=dmvxeb6c5lh6tttdk5najzccki)(react@18.2.0)
       tslib: 2.5.0
     dev: false
 
@@ -2186,7 +2191,7 @@ packages:
     dependencies:
       bluebird: 3.7.2
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.2.0(patch_hash=dmvxeb6c5lh6tttdk5najzccki)(react@18.2.0)
     dev: false
 
   /@plasmohq/init@0.6.3:
@@ -7037,10 +7042,10 @@ packages:
       react-dom: '>=16.8.0'
     dependencies:
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react-dom: 18.2.0(patch_hash=dmvxeb6c5lh6tttdk5najzccki)(react@18.2.0)
     dev: false
 
-  /react-dom@18.2.0(react@18.2.0):
+  /react-dom@18.2.0(patch_hash=dmvxeb6c5lh6tttdk5najzccki)(react@18.2.0):
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
       react: ^18.2.0
@@ -7049,6 +7054,7 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
     dev: false
+    patched: true
 
   /react-error-overlay@6.0.9:
     resolution: {integrity: sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==}
