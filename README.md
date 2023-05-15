@@ -13,7 +13,7 @@ GitHub Merge Guardian is a browser extension that helps to prevent incorrect mer
 ## Install
 
 - [Google Chrome](https://chrome.google.com/webstore/detail/github-merge-guardian/lnnbjejjanhgjakiobppbbchlgbbglio)
-- Firefox: TODO
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/github-merge-guardian/)
 
 ## How to use
 
