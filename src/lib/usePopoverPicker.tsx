@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react"
+import { useCallback, useMemo, useRef, useState } from "react"
 import { HexColorPicker } from "react-colorful"
 
 import { useClickOutside } from "./useClickOutside"
@@ -24,7 +24,7 @@ export const usePopoverPicker = ({
   }, [])
   useClickOutside(popover, close)
 
-  const renderDisplay = useCallback(() => {
+  const renderDisplay = useMemo(() => {
     return (
       <button
         className={displayClassName}
@@ -34,7 +34,7 @@ export const usePopoverPicker = ({
     )
   }, [color, displayClassName])
 
-  const renderPicker = useCallback(() => {
+  const renderPicker = useMemo(() => {
     return isOpen ? (
       <div className={pickerClassName} ref={popover}>
         <HexColorPicker color={color} onChange={onChange} />

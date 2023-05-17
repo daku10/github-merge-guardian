@@ -195,7 +195,7 @@ function IndexOptions() {
           <span className="text-lg text-gh font-normal">Color Picker</span>
           <span className="text-lg text-gh font-normal">Example</span>
           {isFirefox ? (
-            renderDisplay()
+            renderDisplay
           ) : (
             <input
               type="color"
@@ -210,7 +210,7 @@ function IndexOptions() {
             Merge pull request
           </span>
         </div>
-        {isFirefox && renderPicker()}
+        {isFirefox && renderPicker}
         <button
           className="self-start mt-4 text-gh border border-ghgrayBorder bg-ghgray hover:bg-ghgrayHover font-semibold rounded-lg px-4 py-2"
           onClick={handleResetColor}>

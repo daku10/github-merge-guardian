@@ -186,7 +186,7 @@ const ColorPickerFooter = ({
     <div>
       <div className="flex gap-4">
         {isFirefox ? (
-          renderDisplay()
+          renderDisplay
         ) : (
           <input
             type="color"
@@ -201,7 +201,7 @@ const ColorPickerFooter = ({
         </button>
         <OptionButton className="ml-auto" />
       </div>
-      {isFirefox && renderPicker()}
+      {isFirefox && renderPicker}
     </div>
   )
 }
