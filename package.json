@@ -5,10 +5,16 @@
   "description": "Prevent incorrect merges on GitHub's pull request.",
   "author": "daku10",
   "scripts": {
-    "dev": "pnpm generate && plasmo dev",
-    "build": "pnpm generate && pnpm lint && plasmo build",
-    "package": "pnpm generate && pnpm lint && plasmo package",
-    "lint": "tsc --noEmit && eslint src --max-warnings=0",
+    "dev:chrome": "pnpm generate && plasmo dev",
+    "dev:firefox": "pnpm generate && plasmo dev --target=firefox-mv2",
+    "build:chrome": "pnpm generate && pnpm lint && plasmo build",
+    "build:firefox": "pnpm generate && pnpm lint && plasmo build --target=firefox-mv2",
+    "package:chrome": "pnpm build:chrome && plasmo package",
+    "package:firefox": "pnpm build:firefox && plasmo package --target=firefox-mv2",
+    "lint": "pnpm run \"/^lint:.*/\"",
+    "lint:ts": "tsc --noEmit",
+    "lint:es": "eslint src --max-warnings=0",
+    "lint:markup": "markuplint \"src/**/*.tsx\"",
     "test": "vitest run",
     "generate": "tcm -p 'src/**/*.module.css'"
   },
@@ -24,6 +30,8 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@markuplint/jsx-parser": "3.7.0",
+    "@markuplint/react-spec": "3.8.0",
     "@plasmohq/prettier-plugin-sort-imports": "3.6.4",
     "@types/chrome": "0.0.236",
     "@types/node": "18.16.14",

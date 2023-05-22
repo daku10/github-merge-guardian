@@ -35,6 +35,12 @@ dependencies:
     version: 18.2.0(patch_hash=dmvxeb6c5lh6tttdk5najzccki)(react@18.2.0)
 
 devDependencies:
+  '@markuplint/jsx-parser':
+    specifier: 3.7.0
+    version: 3.7.0(@markuplint/ml-core@3.10.0)(typescript@5.0.4)
+  '@markuplint/react-spec':
+    specifier: 3.8.0
+    version: 3.8.0(@markuplint/ml-core@3.10.0)(typescript@5.0.4)
   '@plasmohq/prettier-plugin-sort-imports':
     specifier: 3.6.4
     version: 3.6.4(prettier@2.8.8)
@@ -882,6 +888,21 @@ packages:
     resolution: {integrity: sha512-xcWHRKviM52T8gli0wqojTaKZpWFYTOmi3BSN/p4Uk8eh9bIKV3o2qgJUYMEABWyxYewZv7ZpaptMt7WmxiDwA==}
     dev: true
 
+  /@markuplint/jsx-parser@3.7.0(@markuplint/ml-core@3.10.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-kZ8bg7C8daPG4aRy4yVKFMJwiCZLvTzcZM2+Pf4VKa+YiEKKQZqBA4b6rlpg1p2oEAZDbyDynVjYVjv//jEX5g==}
+    dependencies:
+      '@markuplint/html-parser': 3.8.0(@markuplint/ml-core@3.10.0)(typescript@5.0.4)
+      '@markuplint/ml-ast': 3.1.0
+      '@markuplint/parser-utils': 3.8.0(@markuplint/ml-core@3.10.0)(typescript@5.0.4)
+      '@typescript-eslint/types': 5.59.6
+      '@typescript-eslint/typescript-estree': 5.59.6(typescript@5.0.4)
+      tslib: 2.5.0
+    transitivePeerDependencies:
+      - '@markuplint/ml-core'
+      - supports-color
+      - typescript
+    dev: true
+
   /@markuplint/ml-ast@3.1.0:
     resolution: {integrity: sha512-RDk7V16ObmqtAY8jTS1vgFTly1BNVW/tAlYZcah7Y0OJF9itE42nufYmwKdTNKRS9pq09vMHS39icXBYxpXPZw==}
     dev: true
@@ -950,6 +971,18 @@ packages:
       tslib: 2.5.0
       type-fest: 3.10.0(typescript@5.0.4)
       uuid: 9.0.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
+  /@markuplint/react-spec@3.8.0(@markuplint/ml-core@3.10.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-n1XkSFX5a4RsDmeIQMYxgrbn6xyLpObDRfTeeQpJ3UW9OiRh7pDQtMybWoIPCnOadd3tW8AFF/0a7IPoQGv3vA==}
+    peerDependencies:
+      '@markuplint/ml-core': 3.x
+    dependencies:
+      '@markuplint/ml-core': 3.10.0(typescript@5.0.4)
+      '@markuplint/ml-spec': 3.9.0(typescript@5.0.4)
     transitivePeerDependencies:
       - supports-color
       - typescript
