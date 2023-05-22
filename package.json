@@ -42,7 +42,7 @@
     "ts-pattern": "4.3.0",
     "typed-css-modules": "0.7.2",
     "typescript": "5.0.4",
-    "vitest": "0.31.0"
+    "vitest": "0.31.1"
   },
   "manifest": {
     "host_permissions": [
