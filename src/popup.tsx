@@ -63,7 +63,7 @@ const OptionButton = ({ className }: { className?: string }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6">
+        className="h-6 w-6">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -112,7 +112,7 @@ function IndexPopup() {
 
   if (!currentUrl.match(regex)) {
     return (
-      <div className="p-4 w-72 flex items-center justify-between">
+      <div className="flex w-72 items-center justify-between p-4">
         <p className="text-sm font-bold text-gh">
           This is not a GitHub PR page
         </p>
@@ -123,7 +123,7 @@ function IndexPopup() {
 
   if (matchedSetting === null) {
     return (
-      <div className="p-4 w-60 flex items-center justify-between">
+      <div className="flex w-60 items-center justify-between p-4">
         <p className="text-sm font-bold text-gh">There is no matching rule</p>
         <OptionButton />
       </div>
@@ -131,9 +131,9 @@ function IndexPopup() {
   }
 
   return (
-    <div className="p-4 w-[640px]">
+    <div className="w-[640px] p-4">
       <p className="text-sm font-bold text-gh">Current matching rule</p>
-      <div className="grid grid-cols-5 mt-2 gap-1 mx-auto">
+      <div className="mx-auto mt-2 grid grid-cols-5 gap-1">
         <span className="text-xs">Owner</span>
         <span className="text-xs">Repository</span>
         <span className="text-xs">Base branch</span>
@@ -194,7 +194,7 @@ const ColorPickerFooter = ({
           />
         )}
         <button
-          className="text-xs rounded-lg border border-ghgrayBorder text-gh bg-ghgray hover:bg-ghgrayHover px-2 py-1"
+          className="rounded-lg border border-ghgrayBorder bg-ghgray px-2 py-1 text-xs text-gh hover:bg-ghgrayHover"
           onClick={onChangeDefault}>
           Reset to Defaults
         </button>

@@ -103,10 +103,10 @@ function IndexOptions() {
   const isFirefox = detectBrowser() === "firefox"
 
   return (
-    <div className="flex flex-col max-w-5xl mx-auto py-10">
-      <h1 className="text-4xl text-gh font-bold">GitHub Merge Guardian</h1>
-      <h2 className="text-2xl text-gh font-semibold mt-8 pb-2">Rulesets</h2>
-      <hr className="h-px bg-muted border-0"></hr>
+    <div className="mx-auto flex max-w-5xl flex-col py-10">
+      <h1 className="text-4xl font-bold text-gh">GitHub Merge Guardian</h1>
+      <h2 className="mt-8 pb-2 text-2xl font-semibold text-gh">Rulesets</h2>
+      <hr className="h-px border-0 bg-muted"></hr>
       <p className="mt-8 text-xl">
         <span className="font-medium">Higher rules</span> take precedence over
         lower ones. When applying the rules, the first matching rule in the list
@@ -117,19 +117,19 @@ function IndexOptions() {
       <span className="text-xl"></span>
       <div className="mt-8">
         <div className="flex items-center">
-          <div className="flex justify-between w-full">
-            <div className="w-8 flex items-center justify-center">
-              <SortingIcon className="w-5 h-5" />
+          <div className="flex w-full justify-between">
+            <div className="flex w-8 items-center justify-center">
+              <SortingIcon className="h-5 w-5" />
             </div>
-            <p className="w-44 mr-4 text-lg text-gh font-normal">Owner</p>
-            <p className="w-44 mr-4 text-lg text-gh font-normal">Repository</p>
-            <p className="w-44 mr-4 text-lg text-gh font-normal">Base branch</p>
-            <p className="w-44 mr-4 text-lg text-gh font-normal">
+            <p className="mr-4 w-44 text-lg font-normal text-gh">Owner</p>
+            <p className="mr-4 w-44 text-lg font-normal text-gh">Repository</p>
+            <p className="mr-4 w-44 text-lg font-normal text-gh">Base branch</p>
+            <p className="mr-4 w-44 text-lg font-normal text-gh">
               Compare branch
             </p>
-            <p className="flex-1 text-lg text-gh font-normal">Merge strategy</p>
+            <p className="flex-1 text-lg font-normal text-gh">Merge strategy</p>
             {/* This is dummy for indent. not good... */}
-            <div className="w-6 h-6"></div>
+            <div className="h-6 w-6"></div>
           </div>
         </div>
 
@@ -172,18 +172,18 @@ function IndexOptions() {
       </div>
 
       <button
-        className="self-start mt-4 text-white bg-primary hover:bg-primaryHover font-semibold rounded-lg px-4 py-2"
+        className="mt-4 self-start rounded-lg bg-primary px-4 py-2 font-semibold text-white hover:bg-primaryHover"
         onClick={handleAddSetting}>
         Add
       </button>
       {hasError && (
-        <span className="mt-4 text-red-500 text-xl font-bold">
+        <span className="mt-4 text-xl font-bold text-red-500">
           Update settings has failed. Please try again.
         </span>
       )}
       <div>
-        <h2 className="text-2xl text-gh font-semibold mt-8 pb-2">Color</h2>
-        <hr className="h-px bg-muted border-0"></hr>
+        <h2 className="mt-8 pb-2 text-2xl font-semibold text-gh">Color</h2>
+        <hr className="h-px border-0 bg-muted"></hr>
         <p className="mt-8 text-xl">
           Customize the merge button&apos;s color to emphasize the
           attention-grabbing effect. Select your preferred color from the color
@@ -191,33 +191,33 @@ function IndexOptions() {
           <span className="font-medium">the extension&apos;s popup.</span> As
           you update a color, it is automatically saved.
         </p>
-        <div className="grid grid-cols-2 mt-4 gap-4 max-w-xl">
-          <span className="text-lg text-gh font-normal">Color Picker</span>
-          <span className="text-lg text-gh font-normal">Example</span>
+        <div className="mt-4 grid max-w-xl grid-cols-2 gap-4">
+          <span className="text-lg font-normal text-gh">Color Picker</span>
+          <span className="text-lg font-normal text-gh">Example</span>
           {isFirefox ? (
             renderDisplay
           ) : (
             <input
               type="color"
-              className="w-16 h-8"
+              className="h-8 w-16"
               value={color}
               onChange={(e) => handleSetColor(e.target.value)}
             />
           )}
           <span
             style={{ backgroundColor: color }}
-            className=" text-white text-sm w-48 rounded-lg px-4 py-2">
+            className=" w-48 rounded-lg px-4 py-2 text-sm text-white">
             Merge pull request
           </span>
         </div>
         {isFirefox && renderPicker}
         <button
-          className="self-start mt-4 text-gh border border-ghgrayBorder bg-ghgray hover:bg-ghgrayHover font-semibold rounded-lg px-4 py-2"
+          className="mt-4 self-start rounded-lg border border-ghgrayBorder bg-ghgray px-4 py-2 font-semibold text-gh hover:bg-ghgrayHover"
           onClick={handleResetColor}>
           Reset to Defaults
         </button>
         {hasErrorColor && (
-          <span className="mt-4 text-red-500 text-xl font-bold">
+          <span className="mt-4 text-xl font-bold text-red-500">
             Update color has failed. Please try again.
           </span>
         )}
@@ -248,9 +248,12 @@ const SortableFormItem = ({
   }
   return (
     <li key={setting.id} ref={setNodeRef} style={style} {...attributes}>
-      <div className="flex mt-4 items-center w-full">
-        <button aria-label="sortable" className="w-8 h-full flex justify-center" {...listeners}>
-          <SortableIcon className="w-6 h-6 hover:bg-gray-200 rounded-full" />
+      <div className="mt-4 flex w-full items-center">
+        <button
+          aria-label="sortable"
+          className="flex h-full w-8 justify-center"
+          {...listeners}>
+          <SortableIcon className="h-6 w-6 rounded-full hover:bg-gray-200" />
         </button>
         <Input
           type="text"
@@ -291,7 +294,7 @@ const SortableFormItem = ({
           }}
         />
         <select
-          className="flex-1 p-3 mr-4 text-base text-gh border border-gray-300 rounded-lg bg-gray-50 outline-gray-500 box-border"
+          className="mr-4 box-border flex-1 rounded-lg border border-gray-300 bg-gray-50 p-3 text-base text-gh outline-gray-500"
           value={setting.strategy}
           onChange={(e) =>
             changeSetting(index, {
@@ -307,7 +310,7 @@ const SortableFormItem = ({
           onClick={() => {
             removeSetting(index)
           }}>
-          <TrashIcon className="w-6 h-6 hover:fill-red-500" />
+          <TrashIcon className="h-6 w-6 hover:fill-red-500" />
         </button>
       </div>
     </li>
@@ -318,7 +321,7 @@ const Input: React.FC<ComponentProps<"input">> = (props) => (
   <input
     required
     aria-label="input"
-    className="invalid:border-red-300 w-44 mr-4 p-3 text-base text-gh border border-gray-300 rounded-lg bg-gray-50 outline-gray-500 box-border"
+    className="mr-4 box-border w-44 rounded-lg border border-gray-300 bg-gray-50 p-3 text-base text-gh outline-gray-500 invalid:border-red-300"
     {...props}
   />
 )
@@ -356,10 +359,7 @@ const SortableIcon = ({ className }: { className?: string }) => (
 )
 
 const TrashIcon = ({ className }: { className?: string }) => (
-  <svg
-    role="img"
-    viewBox="0 0 448 512"
-    className={className}>
+  <svg role="img" viewBox="0 0 448 512" className={className}>
     <path d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z" />
   </svg>
 )
