@@ -22,7 +22,7 @@
     "@dnd-kit/core": "6.0.8",
     "@dnd-kit/sortable": "7.0.2",
     "@dnd-kit/utilities": "3.2.1",
-    "@plasmohq/messaging": "0.3.0",
+    "@plasmohq/messaging": "0.3.3",
     "@plasmohq/storage": "1.6.0",
     "plasmo": "0.73.7",
     "react": "18.2.0",
