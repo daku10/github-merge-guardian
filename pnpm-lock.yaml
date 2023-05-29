@@ -23,8 +23,8 @@ dependencies:
     specifier: 0.3.3
     version: 0.3.3(react@18.2.0)
   '@plasmohq/storage':
-    specifier: 1.6.0
-    version: 1.6.0(react@18.2.0)
+    specifier: 1.6.1
+    version: 1.6.1(react@18.2.0)
   plasmo:
     specifier: 0.73.7
     version: 0.73.7(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(ts-node@10.9.1)
@@ -2385,8 +2385,8 @@ packages:
       - supports-color
     dev: true
 
-  /@plasmohq/storage@1.6.0(react@18.2.0):
-    resolution: {integrity: sha512-7IUEVxLT8aDfhlX5U8BKvJVHclJbtI2GN2yLw5ULs1R51mM7YkAoacHP6kGQof4JD15yb4dutLLZi+O2LArlcw==}
+  /@plasmohq/storage@1.6.1(react@18.2.0):
+    resolution: {integrity: sha512-FgykO3m5YhOBA/xANpsLTGGKkBD1uVmymnG7aMck4BS962Tz+bDv476NFVoSrOtduadBpRFTsBAsyXUMdY8YKA==}
     peerDependencies:
       react: ^16.8.6 || ^17 || ^18
     peerDependenciesMeta:
