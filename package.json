@@ -34,7 +34,7 @@
     "@markuplint/react-spec": "3.8.0",
     "@plasmohq/prettier-plugin-sort-imports": "3.6.4",
     "@types/chrome": "0.0.237",
-    "@types/node": "18.16.14",
+    "@types/node": "18.16.16",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "@typescript-eslint/eslint-plugin": "5.59.7",
