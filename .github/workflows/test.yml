@@ -29,3 +29,5 @@ jobs:
           cache: "pnpm"
       - name: Run Test
         run: pnpm test
+      - name: Build for lint
+        run: pnpm build:chrome
