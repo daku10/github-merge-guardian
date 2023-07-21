@@ -2,11 +2,11 @@ import type { PlasmoCSConfig } from "plasmo"
 
 import { STRATEGIES, type Setting } from "~lib/constantAndType"
 import {
+  parseMessage,
   QUERY_MATCHED_SETTING,
   UPDATE_COLOR,
   UPDATE_PAGE,
-  UPDATE_SETTINGS,
-  parseMessage
+  UPDATE_SETTINGS
 } from "~lib/message"
 import {
   retrieveRepositorySlug,
