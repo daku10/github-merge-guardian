@@ -1,0 +1,2 @@
+# Ignore generated css typedef files:
+**/*.module.css.d.ts
