@@ -7,7 +7,7 @@ const regex =
   /^https:\/\/github\.com\/[^/]+\/[^/]+\/pull\/\d+(?:\?[^#]*)?(?:#.*)?$/
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.status === "complete" && tab.url && tab.url.match(regex)) {
+  if (changeInfo.status === "complete" && tab.url?.match(regex)) {
     sendToContentScript({ tabId, name: UPDATE_PAGE }).catch((e) => {
       console.error(e)
     })

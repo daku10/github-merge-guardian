@@ -25,11 +25,7 @@ function useCurrentUrlAndSetting() {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0]
       setCurrentUrl(activeTab?.url ?? "")
-      if (
-        activeTab !== undefined &&
-        activeTab.id !== undefined &&
-        activeTab.url?.match(regex) !== null
-      ) {
+      if (activeTab?.id !== undefined && activeTab.url?.match(regex) !== null) {
         chrome.tabs.sendMessage(
           activeTab.id,
           { name: QUERY_MATCHED_SETTING },
@@ -88,8 +84,7 @@ function IndexPopup() {
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const activeTab = tabs[0]
         if (
-          activeTab !== undefined &&
-          activeTab.id !== undefined &&
+          activeTab?.id !== undefined &&
           activeTab.url?.match(regex) !== null
         ) {
           chrome.tabs.sendMessage(
@@ -153,7 +148,9 @@ function IndexPopup() {
           <ColorPickerFooter
             color={color}
             onChange={updateColor}
-            onChangeDefault={() => updateColor(DEFAULT_COLOR)}
+            onChangeDefault={() => {
+              updateColor(DEFAULT_COLOR)
+            }}
           />
         </div>
       </div>
@@ -190,7 +187,9 @@ const ColorPickerFooter = ({
           <input
             type="color"
             value={color}
-            onChange={(e) => onChange(e.currentTarget.value)}
+            onChange={(e) => {
+              onChange(e.currentTarget.value)
+            }}
           />
         )}
         <button

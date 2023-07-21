@@ -29,7 +29,9 @@ export const usePopoverPicker = ({
       <button
         className={displayClassName}
         style={{ backgroundColor: color }}
-        onClick={() => toggle(true)}
+        onClick={() => {
+          toggle(true)
+        }}
       />
     )
   }, [color, displayClassName])
