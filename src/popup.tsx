@@ -148,7 +148,9 @@ function IndexPopup() {
           <ColorPickerFooter
             color={color}
             onChange={updateColor}
-            onChangeDefault={() => updateColor(DEFAULT_COLOR)}
+            onChangeDefault={() => {
+              updateColor(DEFAULT_COLOR)
+            }}
           />
         </div>
       </div>
@@ -185,7 +187,9 @@ const ColorPickerFooter = ({
           <input
             type="color"
             value={color}
-            onChange={(e) => onChange(e.currentTarget.value)}
+            onChange={(e) => {
+              onChange(e.currentTarget.value)
+            }}
           />
         )}
         <button

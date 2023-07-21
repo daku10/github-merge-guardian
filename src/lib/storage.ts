@@ -66,9 +66,6 @@ export function useSettings() {
   const changeSetting = useCallback(
     (index: number, setting: Partial<Setting>) => {
       return setSettings((prev) => {
-        if (prev === undefined) {
-          return []
-        }
         const newSettings = [...prev]
         const s = newSettings[index]
         if (s === undefined) {
@@ -83,9 +80,6 @@ export function useSettings() {
 
   const addSetting = useCallback(() => {
     return setSettings((prev) => {
-      if (prev === undefined) {
-        return []
-      }
       return [...prev, newSetting()]
     })
   }, [setSettings])
@@ -93,9 +87,6 @@ export function useSettings() {
   const moveSettings = useCallback(
     (oldIndex: number, newIndex: number) => {
       return setSettings((prev) => {
-        if (prev === undefined) {
-          return []
-        }
         return arrayMove(prev, oldIndex, newIndex)
       })
     },
@@ -105,9 +96,6 @@ export function useSettings() {
   const removeSetting = useCallback(
     (index: number) => {
       return setSettings((prev) => {
-        if (prev === undefined) {
-          return []
-        }
         if (prev.length <= index) {
           return prev
         }

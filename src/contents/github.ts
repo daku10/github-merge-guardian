@@ -154,47 +154,52 @@ chrome.runtime.onMessage.addListener(
     if (message === null) {
       return
     }
-    if (message.name === UPDATE_PAGE) {
-      main()
-      return
-    }
-    if (message.name === UPDATE_SETTINGS) {
-      applySetting(message.body.settings)
-      sendResponse({})
-      // To make this function asynchronous, return true
-      return true
-    }
-    if (message.name === QUERY_MATCHED_SETTING) {
-      const [owner, repositoryName] = retrieveRepositorySlug()
-      const baseBranch = selectBaseBranchText()
-      const compareBranch = selectCompareBranchText()
-      if (owner && repositoryName && baseBranch && compareBranch) {
-        readSettings()
-          .then((settings) => {
-            const setting = getMatchedSetting(
-              owner,
-              repositoryName,
-              baseBranch,
-              compareBranch,
-              settings
-            )
-            sendResponse(setting)
-          })
-          .catch((e) => {
-            console.error(e)
-            sendResponse({})
-          })
+    switch (message.name) {
+      case UPDATE_PAGE: {
+        main()
+        return
+      }
+      case UPDATE_SETTINGS: {
+        readAndApplySetting()
+        sendResponse({})
         // To make this function asynchronous, return true
         return true
-      } else {
+      }
+      case QUERY_MATCHED_SETTING: {
+        const [owner, repositoryName] = retrieveRepositorySlug()
+        const baseBranch = selectBaseBranchText()
+        const compareBranch = selectCompareBranchText()
+        if (owner && repositoryName && baseBranch && compareBranch) {
+          readSettings()
+            .then((settings) => {
+              const setting = getMatchedSetting(
+                owner,
+                repositoryName,
+                baseBranch,
+                compareBranch,
+                settings
+              )
+              sendResponse(setting)
+            })
+            .catch((e) => {
+              console.error(e)
+              sendResponse({})
+            })
+          // To make this function asynchronous, return true
+          return true
+        } else {
+          sendResponse({})
+          return
+        }
+      }
+      case UPDATE_COLOR: {
+        changeColor(message.body.color)
         sendResponse({})
         return
       }
-    }
-    if (message.name === UPDATE_COLOR) {
-      changeColor(message.body.color)
-      sendResponse({})
-      return
+      default: {
+        const _: never = message
+      }
     }
     return
   }
