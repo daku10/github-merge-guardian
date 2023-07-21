@@ -45,7 +45,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "markuplint": "3.12.0",
     "postcss": "8.4.27",
-    "prettier": "2.8.8",
+    "prettier": "3.0.0",
     "tailwindcss": "3.3.3",
     "ts-pattern": "5.0.4",
     "typed-css-modules": "0.7.2",
