@@ -31,9 +31,9 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "4.1.0",
     "@markuplint/jsx-parser": "3.9.0",
     "@markuplint/react-spec": "3.10.0",
-    "@plasmohq/prettier-plugin-sort-imports": "4.0.1",
     "@types/chrome": "0.0.241",
     "@types/node": "18.16.19",
     "@types/react": "18.2.15",
