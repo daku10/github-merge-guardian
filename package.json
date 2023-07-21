@@ -16,7 +16,8 @@
     "lint:es": "eslint src --max-warnings=0",
     "lint:markup": "markuplint \"src/**/*.tsx\"",
     "test": "vitest run",
-    "generate": "tcm -p 'src/**/*.module.css'"
+    "generate": "tcm -p 'src/**/*.module.css'",
+    "format": "prettier --write src/**/*.{ts,tsx}"
   },
   "dependencies": {
     "@dnd-kit/core": "6.0.8",
