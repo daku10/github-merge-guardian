@@ -1,7 +1,7 @@
 declare const styles: {
   readonly "execButton": string;
-  readonly "selectButton": string;
   readonly "menuButton": string;
+  readonly "selectButton": string;
 };
 export = styles;
 

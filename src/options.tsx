@@ -1,4 +1,4 @@
-import { type ComponentProps, useCallback } from "react"
+import { useCallback, type ComponentProps, type FC } from "react"
 
 import "./style.css"
 
@@ -319,7 +319,7 @@ const SortableFormItem = ({
   )
 }
 
-const Input: React.FC<ComponentProps<"input">> = (props) => (
+const Input: FC<ComponentProps<"input">> = (props) => (
   <input
     required
     aria-label="input"
