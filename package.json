@@ -54,7 +54,7 @@
     "ts-pattern": "5.0.6",
     "typed-css-modules": "0.8.1",
     "typescript": "5.3.3",
-    "vitest": "0.34.6"
+    "vitest": "1.0.4"
   },
   "manifest": {
     "host_permissions": [
