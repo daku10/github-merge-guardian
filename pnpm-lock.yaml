@@ -82,8 +82,8 @@ devDependencies:
     specifier: 4.6.0
     version: 4.6.0(eslint@8.57.0)
   globals:
-    specifier: 14.0.0
-    version: 14.0.0
+    specifier: 15.0.0
+    version: 15.0.0
   markuplint:
     specifier: 4.1.1
     version: 4.1.1(typescript@5.4.5)
@@ -5633,8 +5633,8 @@ packages:
     dependencies:
       type-fest: 0.20.2
 
-  /globals@14.0.0:
-    resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+  /globals@15.0.0:
+    resolution: {integrity: sha512-m/C/yR4mjO6pXDTm9/R/SpYTAIyaUB4EOzcaaMEl7mds7Mshct9GfejiJNQGjHHbdMPey13Kpu4TMbYi9ex1pw==}
     engines: {node: '>=18'}
     dev: true
 
