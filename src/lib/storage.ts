@@ -23,7 +23,7 @@ export const readColor = async (): Promise<string> => {
 function generateUniqueId(): string {
   const timestamp = new Date().getTime()
   const randomNum = Math.random()
-  const uniqueId = `${timestamp}-${randomNum}`
+  const uniqueId = `${timestamp.toString()}-${randomNum.toString()}`
 
   return uniqueId
 }
@@ -166,7 +166,7 @@ function useDebouncedStorage<T>(
 
   const errorHandledSetStoreValue = useCallback(
     (v: T) => {
-      setStoreValue(v).catch((e) => {
+      setStoreValue(v).catch((e: unknown) => {
         console.error(e)
         setHasError(true)
       })

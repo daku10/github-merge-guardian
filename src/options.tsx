@@ -28,7 +28,7 @@ const notifyUpdateSettings = (settings: Setting[]) => {
     body: {
       settings
     }
-  }).catch((e) => {
+  }).catch((e: unknown) => {
     console.error(e)
   })
 }
@@ -39,7 +39,7 @@ const notifyUpdateColor = (color: string) => {
     body: {
       color
     }
-  }).catch((e) => {
+  }).catch((e: unknown) => {
     console.error(e)
   })
 }
