@@ -155,7 +155,7 @@ function isFunction(v: unknown): v is Function {
 
 function useDebouncedStorage<T>(
   key: string,
-  onInit?: Setter<T>,
+  onInit: Setter<T>,
   timeoutMs?: number
 ) {
   const [hasError, setHasError] = useState(false)
@@ -165,7 +165,7 @@ function useDebouncedStorage<T>(
   )
 
   const errorHandledSetStoreValue = useCallback(
-    (v?: T) => {
+    (v: T) => {
       setStoreValue(v).catch((e) => {
         console.error(e)
         setHasError(true)
@@ -199,10 +199,10 @@ function useDebouncedStorage<T>(
   }, [value, setValue, hasError])
 }
 
-function useDebounce<T>(fn: (args?: T) => void, timeoutMs: number) {
+function useDebounce<T>(fn: (args: T) => void, timeoutMs: number) {
   const timer = useRef<number | undefined>(undefined)
   const debounce = useCallback(
-    (args?: T) => {
+    (args: T) => {
       if (timer.current) {
         window.clearTimeout(timer.current)
       }
