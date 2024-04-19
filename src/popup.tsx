@@ -48,7 +48,9 @@ function useCurrentUrlAndSetting() {
 
 const OptionButton = ({ className }: { className?: string }) => {
   const openOptionPage = useCallback(() => {
-    chrome.runtime.openOptionsPage()
+    chrome.runtime.openOptionsPage().catch((e: unknown) => {
+      console.error(e)
+    })
   }, [])
   return (
     <button

@@ -34,7 +34,7 @@ const readAndApplySetting = () => {
     .then((settings) => {
       applySetting(settings)
     })
-    .catch((e) => {
+    .catch((e: unknown) => {
       console.error(e)
     })
 }
@@ -144,7 +144,7 @@ readColor()
   .then((color) => {
     changeColor(color)
   })
-  .catch((e) => {
+  .catch((e: unknown) => {
     console.error(e)
   })
 
@@ -181,7 +181,7 @@ chrome.runtime.onMessage.addListener(
               )
               sendResponse(setting)
             })
-            .catch((e) => {
+            .catch((e: unknown) => {
               console.error(e)
               sendResponse({})
             })

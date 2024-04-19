@@ -2,12 +2,12 @@ import type { Setting } from "./constantAndType"
 import { parseSetting } from "./setting"
 import { isObject } from "./util"
 
-export const UPDATE_PAGE = "update-page" as const
-export const QUERY_MATCHED_SETTING = "query-matched-setting" as const
+export const UPDATE_PAGE = "update-page"
+export const QUERY_MATCHED_SETTING = "query-matched-setting"
 // This is linked to the message type in src/background/messages/update-settings.ts
-export const UPDATE_SETTINGS = "update-settings" as const
+export const UPDATE_SETTINGS = "update-settings"
 // This is linked to the message type in src/background/messages/update-color.ts
-export const UPDATE_COLOR = "update-color" as const
+export const UPDATE_COLOR = "update-color"
 
 type UpdatePage = {
   name: typeof UPDATE_PAGE

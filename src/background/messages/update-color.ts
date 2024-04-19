@@ -1,4 +1,4 @@
-import { type PlasmoMessaging, sendToContentScript } from "@plasmohq/messaging"
+import { sendToContentScript, type PlasmoMessaging } from "@plasmohq/messaging"
 
 import { DEFAULT_COLOR } from "~lib/constantAndType"
 import { UPDATE_COLOR } from "~lib/message"
@@ -29,7 +29,7 @@ const handler: PlasmoMessaging.MessageHandler<{ color: string }> = async (
             })
           )
       )
-        .catch((e) => {
+        .catch((e: unknown) => {
           console.error(e)
         })
         .finally(() => {
