@@ -1,0 +1,73 @@
+diff --git a/cjs/react-dom.development.js b/cjs/react-dom.development.js
+index a11d72fdc1b9e971e9b83cce5acc36d0967e2706..1319706b86b6650c361327455a8a229be33c2347 100644
+--- a/cjs/react-dom.development.js
++++ b/cjs/react-dom.development.js
+@@ -2425,29 +2425,29 @@ var reusableSVGContainer;
+  */
+ 
+ var setInnerHTML = createMicrosoftUnsafeLocalFunction(function (node, html) {
+-  if (node.namespaceURI === SVG_NAMESPACE) {
++  // if (node.namespaceURI === SVG_NAMESPACE) {
+ 
+-    if (!('innerHTML' in node)) {
+-      // IE does not have innerHTML for SVG nodes, so instead we inject the
+-      // new markup in a temp node and then move the child nodes across into
+-      // the target node
+-      reusableSVGContainer = reusableSVGContainer || document.createElement('div');
+-      reusableSVGContainer.innerHTML = '<svg>' + html.valueOf().toString() + '</svg>';
+-      var svgNode = reusableSVGContainer.firstChild;
++  //   if (!('innerHTML' in node)) {
++  //     // IE does not have innerHTML for SVG nodes, so instead we inject the
++  //     // new markup in a temp node and then move the child nodes across into
++  //     // the target node
++  //     reusableSVGContainer = reusableSVGContainer || document.createElement('div');
++  //     reusableSVGContainer.innerHTML = '<svg>' + html.valueOf().toString() + '</svg>';
++  //     var svgNode = reusableSVGContainer.firstChild;
+ 
+-      while (node.firstChild) {
+-        node.removeChild(node.firstChild);
+-      }
++  //     while (node.firstChild) {
++  //       node.removeChild(node.firstChild);
++  //     }
+ 
+-      while (svgNode.firstChild) {
+-        node.appendChild(svgNode.firstChild);
+-      }
++  //     while (svgNode.firstChild) {
++  //       node.appendChild(svgNode.firstChild);
++  //     }
+ 
+-      return;
+-    }
+-  }
++  //     return;
++  //   }
++  // }
+ 
+-  node.innerHTML = html;
++  // node.innerHTML = html;
+ });
+ 
+ /**
+@@ -29918,6 +29918,6 @@ if (
+ ) {
+   __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+ }
+-        
++
+   })();
+ }
+diff --git a/cjs/react-dom.production.min.js b/cjs/react-dom.production.min.js
+index f24ee10955db0bf0cdfd5db3cb920d82173e409a..55d2c197e9fff07e5d9de7e265e009beb38e5e01 100644
+--- a/cjs/react-dom.production.min.js
++++ b/cjs/react-dom.production.min.js
+@@ -42,7 +42,7 @@ function fb(a,b,c,d){a=a.options;if(b){b={};for(var e=0;e<c.length;e++)b["$"+c[e
+ function gb(a,b){if(null!=b.dangerouslySetInnerHTML)throw Error(p(91));return A({},b,{value:void 0,defaultValue:void 0,children:""+a._wrapperState.initialValue})}function hb(a,b){var c=b.value;if(null==c){c=b.children;b=b.defaultValue;if(null!=c){if(null!=b)throw Error(p(92));if(eb(c)){if(1<c.length)throw Error(p(93));c=c[0]}b=c}null==b&&(b="");c=b}a._wrapperState={initialValue:Sa(c)}}
+ function ib(a,b){var c=Sa(b.value),d=Sa(b.defaultValue);null!=c&&(c=""+c,c!==a.value&&(a.value=c),null==b.defaultValue&&a.defaultValue!==c&&(a.defaultValue=c));null!=d&&(a.defaultValue=""+d)}function jb(a){var b=a.textContent;b===a._wrapperState.initialValue&&""!==b&&null!==b&&(a.value=b)}function kb(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}
+ function lb(a,b){return null==a||"http://www.w3.org/1999/xhtml"===a?kb(b):"http://www.w3.org/2000/svg"===a&&"foreignObject"===b?"http://www.w3.org/1999/xhtml":a}
+-var mb,nb=function(a){return"undefined"!==typeof MSApp&&MSApp.execUnsafeLocalFunction?function(b,c,d,e){MSApp.execUnsafeLocalFunction(function(){return a(b,c,d,e)})}:a}(function(a,b){if("http://www.w3.org/2000/svg"!==a.namespaceURI||"innerHTML"in a)a.innerHTML=b;else{mb=mb||document.createElement("div");mb.innerHTML="<svg>"+b.valueOf().toString()+"</svg>";for(b=mb.firstChild;a.firstChild;)a.removeChild(a.firstChild);for(;b.firstChild;)a.appendChild(b.firstChild)}});
++var mb,nb=function(a){return"undefined"!==typeof MSApp&&MSApp.execUnsafeLocalFunction?function(b,c,d,e){MSApp.execUnsafeLocalFunction(function(){return a(b,c,d,e)})}:a}(function(a,b){});
+ function ob(a,b){if(b){var c=a.firstChild;if(c&&c===a.lastChild&&3===c.nodeType){c.nodeValue=b;return}}a.textContent=b}
+ var pb={animationIterationCount:!0,aspectRatio:!0,borderImageOutset:!0,borderImageSlice:!0,borderImageWidth:!0,boxFlex:!0,boxFlexGroup:!0,boxOrdinalGroup:!0,columnCount:!0,columns:!0,flex:!0,flexGrow:!0,flexPositive:!0,flexShrink:!0,flexNegative:!0,flexOrder:!0,gridArea:!0,gridRow:!0,gridRowEnd:!0,gridRowSpan:!0,gridRowStart:!0,gridColumn:!0,gridColumnEnd:!0,gridColumnSpan:!0,gridColumnStart:!0,fontWeight:!0,lineClamp:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,tabSize:!0,widows:!0,zIndex:!0,
+ zoom:!0,fillOpacity:!0,floodOpacity:!0,stopOpacity:!0,strokeDasharray:!0,strokeDashoffset:!0,strokeMiterlimit:!0,strokeOpacity:!0,strokeWidth:!0},qb=["Webkit","ms","Moz","O"];Object.keys(pb).forEach(function(a){qb.forEach(function(b){b=b+a.charAt(0).toUpperCase()+a.substring(1);pb[b]=pb[a]})});function rb(a,b,c){return null==b||"boolean"===typeof b||""===b?"":c||"number"!==typeof b||0===b||pb.hasOwnProperty(a)&&pb[a]?(""+b).trim():b+"px"}

@@ -68,5 +68,10 @@
         "strict_min_version": "57.0"
       }
     }
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "react-dom@18.3.1": "patches/react-dom@18.3.1.patch"
+    }
   }
 }
