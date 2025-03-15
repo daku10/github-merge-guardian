@@ -70,48 +70,57 @@ const applySetting = (settings: Setting[]) => {
       selectStrategySelectButtonElement(s)?.classList.remove(
         styles.selectButton
       )
-      selectStrategyExecButtonElement(s)?.classList.remove(styles.execButton)
     })
-    changeMenuButtonColorReset()
+    changeButtonsColorReset()
     return
   }
   const strategy = setting.strategy
 
   abortController = new AbortController()
 
-  STRATEGIES.forEach((s) => {
-    const selectElement = selectStrategySelectButtonElement(s)
-    const execElement = selectStrategyExecButtonElement(s)
-    if (s === strategy) {
-      selectElement?.classList.remove(styles.selectButton)
-      selectElement?.addEventListener(
-        "click",
-        changeMenuButtonColorReset,
-        abortController ? { signal: abortController.signal } : undefined
-      )
-      execElement?.classList.remove(styles.execButton)
-    } else {
-      selectElement?.classList.add(styles.selectButton)
-      selectElement?.addEventListener(
-        "click",
-        changeMenuButtonColorWarning,
-        abortController ? { signal: abortController.signal } : undefined
-      )
-      execElement?.classList.add(styles.execButton)
-    }
-  })
+  selectMenuButtonElement()?.addEventListener(
+    "click",
+    () => {
+      // Strategy select button is not rendered immediately, so wait a little
+      setTimeout(() => {
+        STRATEGIES.forEach((s) => {
+          const selectElement = selectStrategySelectButtonElement(s)
+          if (s === strategy) {
+            selectElement?.classList.remove(styles.selectButton)
+            selectElement?.addEventListener(
+              "click",
+              changeButtonsColorReset,
+              abortController ? { signal: abortController.signal } : undefined
+            )
+          } else {
+            selectElement?.classList.add(styles.selectButton)
+            selectElement?.addEventListener(
+              "click",
+              changeButtonsColorWarning,
+              abortController ? { signal: abortController.signal } : undefined
+            )
+          }
+        })
+      }, 10)
+    },
+    { signal: abortController.signal }
+  )
 
-  strategy === retrieveSelectedStrategy()
-    ? changeMenuButtonColorReset()
-    : changeMenuButtonColorWarning()
+  if (strategy === retrieveSelectedStrategy()) {
+    changeButtonsColorReset()
+  } else {
+    changeButtonsColorWarning()
+  }
 }
 
-const changeMenuButtonColorWarning = () => {
-  selectMenuButtonElement()?.classList.add(styles.menuButton)
-}
-
-const changeMenuButtonColorReset = () => {
+const changeButtonsColorReset = () => {
   selectMenuButtonElement()?.classList.remove(styles.menuButton)
+  selectStrategyExecButtonElement()?.classList.remove(styles.execButton)
+}
+
+const changeButtonsColorWarning = () => {
+  selectMenuButtonElement()?.classList.add(styles.menuButton)
+  selectStrategyExecButtonElement()?.classList.add(styles.execButton)
 }
 
 const actionObserver = new MutationObserver((_, observer) => {

@@ -1,6 +1,6 @@
 import { match } from "ts-pattern"
 
-import { STRATEGIES, type Strategy } from "./constantAndType"
+import type { Strategy } from "./constantAndType"
 
 // this can be matched pull request commits, checks and files page.
 const regex = /^https:\/\/github\.com\/([^/]+)\/([^/]+)\/pull\/\d+/
@@ -33,58 +33,36 @@ export const selectCompareBranchText: () => string | null = () => {
 }
 
 export const selectMenuButtonElement = () => {
-  // this is not `button` element
-  return document.querySelector<HTMLElement>(".js-merge-method-menu-button")
-}
-
-export const selectStrategySelectButtonElement = (storategy: Strategy) => {
-  const value = match(storategy)
-    .with("Merge", () => "merge")
-    .with("Squash", () => "squash")
-    .with("Rebase", () => "rebase")
-    .exhaustive()
   return document.querySelector<HTMLButtonElement>(
-    `.merge-message details button[value=${value}]`
+    '[aria-label="Select merge method"]'
   )
 }
 
-const execButtonClass = (storategy: Strategy) => {
-  const value = match(storategy)
-    .with("Merge", () => "merge")
-    .with("Squash", () => "squash")
-    .with("Rebase", () => "rebase")
+export const selectStrategySelectButtonElement = (strategy: Strategy) => {
+  // select from aria-keyshortcuts attribute, but it's fragile to change the value.
+  const value = match(strategy)
+    .with("Merge", () => "c")
+    .with("Squash", () => "s")
+    .with("Rebase", () => "r")
     .exhaustive()
-  return `btn-group-${value}`
+  return document.querySelector<HTMLElement>(`li[aria-keyshortcuts="${value}"]`)
 }
 
-export const selectParentStrategyExecElement = () => {
-  return document.querySelector(".merge-message .BtnGroup")
-}
-
-export const selectStrategyExecButtonElement = (storategy: Strategy) => {
+export const selectStrategyExecButtonElement = () => {
+  // TODO: it's fragile to change the class name.
   return document.querySelector<HTMLButtonElement>(
-    `.merge-message .merge-box-button.${execButtonClass(storategy)}`
+    "[class^=prc-Button-ButtonBase-].flex-1"
   )
 }
 
-export const retrieveSelectedStrategy = () => {
-  const buttons = STRATEGIES.map((s) => selectStrategyExecButtonElement(s))
-    .filter((b): b is HTMLButtonElement => b !== null)
-    .filter((e) => {
-      const computedStyle = getComputedStyle(e)
-      return computedStyle.display !== "none"
-    })
-
-  const button = buttons[0]
-  if (button === undefined) {
+export const retrieveSelectedStrategy: () => Strategy | null = () => {
+  const button = selectStrategyExecButtonElement()
+  if (button === null) {
     return null
   }
-
-  const classList = button.classList
-  for (const s of STRATEGIES) {
-    if (classList.contains(execButtonClass(s))) {
-      return s
-    }
-  }
-  return null
+  return match(button.textContent)
+    .with("Merge pull request", () => "Merge" as const)
+    .with("Squash and merge", () => "Squash" as const)
+    .with("Rebase and merge", () => "Rebase" as const)
+    .otherwise(() => null)
 }
