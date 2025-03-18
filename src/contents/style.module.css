@@ -4,7 +4,7 @@
     --gmg-menu-button-color: #ff8c00;
 }
 
-.execButton:not(:disabled) {
+.execButton:not([aria-disabled="true"]):not(:disabled) {
     background-color: var(--gmg-exec-button-color) !important;
 }
 
