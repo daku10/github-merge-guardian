@@ -134,7 +134,12 @@ const bodyObserver = new MutationObserver((_, observer) => {
   const actions = selectRootActionsElement()
   if (actions) {
     observer.disconnect()
-    actionObserver.observe(actions, { childList: true, subtree: true })
+    const menu = selectMenuButtonElement()
+    if (menu) {
+      readAndApplySetting()
+    } else {
+      actionObserver.observe(actions, { childList: true, subtree: true })
+    }
   }
 })
 
