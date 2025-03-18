@@ -169,10 +169,8 @@ chrome.runtime.onMessage.addListener(
         return
       }
       case UPDATE_SETTINGS: {
-        readAndApplySetting()
-        sendResponse({})
-        // To make this function asynchronous, return true
-        return true
+        applySetting(message.body.settings)
+        return
       }
       case QUERY_MATCHED_SETTING: {
         const [owner, repositoryName] = retrieveRepositorySlug()
