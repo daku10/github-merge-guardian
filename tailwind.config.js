@@ -1,7 +1,7 @@
 export default {
   mode: "jit",
   darkMode: "class",
-  content: ["./**/*.tsx"],
+  content: ["./src/**/*.tsx"],
   plugins: [],
   theme: {
     extend: {

@@ -21,6 +21,10 @@ function useCurrentUrlAndSetting() {
   const [currentUrl, setCurrentUrl] = useState<string>("")
   const [matchedSetting, setMatchedSetting] = useState<Setting | null>(null)
 
+  // This useEffect is necessary to query the active tab in the current window
+  // and retrieve its URL. If the URL matches the specified regex pattern for
+  // GitHub pull request pages, it sends a message to the content script to
+  // query the matched setting because popup script can not retrieve parameters(base branch name, compare branch name) directly.
   useEffect(() => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0]
