@@ -123,9 +123,8 @@ const changeButtonsColorWarning = () => {
   selectStrategyExecButtonElement()?.classList.add(styles.execButton)
 }
 
-const actionObserver = new MutationObserver((_, observer) => {
+const actionObserver = new MutationObserver(() => {
   if (selectMenuButtonElement()) {
-    observer.disconnect()
     readAndApplySetting()
   }
 })
@@ -137,9 +136,8 @@ const bodyObserver = new MutationObserver((_, observer) => {
     const menu = selectMenuButtonElement()
     if (menu) {
       readAndApplySetting()
-    } else {
-      actionObserver.observe(actions, { childList: true, subtree: true })
     }
+    actionObserver.observe(actions, { childList: true, subtree: true })
   }
 })
 
