@@ -30,7 +30,8 @@
     "plasmo": "0.89.3",
     "react": "18.3.1",
     "react-colorful": "5.6.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "ts-pattern": "5.7.0"
   },
   "devDependencies": {
     "@eslint/js": "9.23.0",
@@ -52,7 +53,6 @@
     "postcss": "8.4.47",
     "prettier": "3.5.3",
     "tailwindcss": "3.4.14",
-    "ts-pattern": "5.5.0",
     "typed-css-modules": "0.9.1",
     "typescript": "5.6.3",
     "vitest": "2.1.3"
