@@ -6,6 +6,7 @@ import { UPDATE_PAGE } from "~lib/message"
 const regex =
   /^https:\/\/github\.com\/[^/]+\/[^/]+\/pull\/\d+(?:\?[^#]*)?(?:#.*)?$/
 
+// eslint-disable-next-line @typescript-eslint/no-deprecated
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "complete" && tab.url?.match(regex)) {
     sendToContentScript({ tabId, name: UPDATE_PAGE }).catch((e: unknown) => {

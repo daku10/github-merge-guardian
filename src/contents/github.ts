@@ -160,6 +160,7 @@ readColor()
     console.error(e)
   })
 
+// eslint-disable-next-line @typescript-eslint/no-deprecated
 chrome.runtime.onMessage.addListener(
   (rawMessage: unknown, _sender, sendResponse) => {
     const message = parseMessage(rawMessage)
