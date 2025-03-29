@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.23.0",
-    "@ianvs/prettier-plugin-sort-imports": "4.3.1",
+    "@ianvs/prettier-plugin-sort-imports": "4.4.1",
     "@markuplint/jsx-parser": "4.6.1",
     "@markuplint/react-spec": "4.4.1",
     "@types/chrome": "0.0.278",
@@ -50,7 +50,7 @@
     "globals": "16.0.0",
     "markuplint": "4.6.1",
     "postcss": "8.4.47",
-    "prettier": "3.3.3",
+    "prettier": "3.5.3",
     "tailwindcss": "3.4.14",
     "ts-pattern": "5.5.0",
     "typed-css-modules": "0.9.1",
