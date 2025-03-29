@@ -12,12 +12,10 @@ const handler: PlasmoMessaging.MessageHandler<{ color: string }> = async (
   return new Promise<void>((resolve) => {
     // NOTE: chrome.tabs.query has Promise API, but it doesn't work well on firefox.
     // e.g. const tabs = await chrome.tabs.query({ url: queryUrl })..., tabs is undefined on firefox.
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
     chrome.tabs.query({ url: queryUrl }, (tabs) => {
       Promise.all(
         tabs
           .filter(
-            // eslint-disable-next-line @typescript-eslint/no-deprecated
             (tab): tab is chrome.tabs.Tab & { id: number } =>
               tab.id !== undefined
           )

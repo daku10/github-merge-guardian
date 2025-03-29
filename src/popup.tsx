@@ -26,12 +26,10 @@ function useCurrentUrlAndSetting() {
   // GitHub pull request pages, it sends a message to the content script to
   // query the matched setting because popup script can not retrieve parameters(base branch name, compare branch name) directly.
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0]
       setCurrentUrl(activeTab?.url ?? "")
       if (activeTab?.id !== undefined && activeTab.url?.match(regex) !== null) {
-        // eslint-disable-next-line @typescript-eslint/no-deprecated
         chrome.tabs.sendMessage(
           activeTab.id,
           { name: QUERY_MATCHED_SETTING },
@@ -54,7 +52,6 @@ function useCurrentUrlAndSetting() {
 
 const OptionButton = ({ className }: { className?: string }) => {
   const openOptionPage = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
     chrome.runtime.openOptionsPage().catch((e: unknown) => {
       console.error(e)
     })
@@ -90,14 +87,12 @@ function IndexPopup() {
   const updateColor = useCallback(
     (color: string) => {
       setColor(color)
-      // eslint-disable-next-line @typescript-eslint/no-deprecated
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const activeTab = tabs[0]
         if (
           activeTab?.id !== undefined &&
           activeTab.url?.match(regex) !== null
         ) {
-          // eslint-disable-next-line @typescript-eslint/no-deprecated
           chrome.tabs.sendMessage(
             activeTab.id,
             {
