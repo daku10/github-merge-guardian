@@ -1,14 +1,18 @@
 {
-    "excludeFiles": [
-        "./**/*.{test,spec,stories}.tsx"
-    ],
-    "extends": [
-        "markuplint:recommended-react"
-    ],
-    "parser": {
-        ".tsx$": "@markuplint/jsx-parser"
-    },
-    "specs": {
-        ".tsx$": "@markuplint/react-spec"
+  "excludeFiles": ["./**/*.{test,spec,stories}.tsx"],
+  "extends": ["markuplint:recommended-react"],
+  "parser": {
+    ".tsx$": "@markuplint/jsx-parser"
+  },
+  "specs": {
+    ".tsx$": "@markuplint/react-spec"
+  },
+  "overrideMode": "merge",
+  "overrides": {
+    "src/options.tsx": {
+      "rules": {
+        "permitted-contents": false // SortableFormItemがliを返すのを上手く解釈できていないため
+      }
     }
+  }
 }

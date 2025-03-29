@@ -9,7 +9,7 @@ export const retrieveRepositorySlug: () => [
   string | null,
   string | null
 ] = () => {
-  const match = window.location.href.match(regex)
+  const match = regex.exec(window.location.href)
   if (match === null) {
     return [null, null]
   }

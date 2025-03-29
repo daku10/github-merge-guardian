@@ -111,7 +111,7 @@ function IndexPopup() {
     [setColor]
   )
 
-  if (!currentUrl.match(regex)) {
+  if (!regex.exec(currentUrl)) {
     return (
       <div className="p-4 w-72 flex items-center justify-between">
         <p className="text-sm font-bold text-gh">

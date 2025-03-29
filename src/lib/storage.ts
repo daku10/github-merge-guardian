@@ -148,7 +148,7 @@ export function useColor() {
 // consistent with useStorage
 type Setter<T> = ((v?: T, isHydrating?: boolean) => T) | T
 
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 function isFunction(v: unknown): v is Function {
   return typeof v === "function"
 }
