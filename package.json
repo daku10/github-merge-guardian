@@ -38,7 +38,7 @@
     "@ianvs/prettier-plugin-sort-imports": "4.4.1",
     "@markuplint/jsx-parser": "4.7.18",
     "@markuplint/react-spec": "4.5.18",
-    "@types/chrome": "0.0.278",
+    "@types/chrome": "0.0.313",
     "@types/node": "22.13.14",
     "@types/react": "18.3.11",
     "@types/react-dom": "18.3.1",
