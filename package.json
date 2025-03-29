@@ -54,7 +54,7 @@
     "prettier": "3.5.3",
     "tailwindcss": "3.4.14",
     "typed-css-modules": "0.9.1",
-    "typescript": "5.6.3",
+    "typescript": "5.8.2",
     "vitest": "3.0.9"
   },
   "manifest": {
