@@ -1,5 +1,8 @@
 # Changelog
 
+## [v2.0.1](https://github.com/daku10/github-merge-guardian/compare/v2.0.0...v2.0.1) - 2025-03-31
+- bump strict_min_version by @daku10 in https://github.com/daku10/github-merge-guardian/pull/118
+
 ## [v2.0.0](https://github.com/daku10/github-merge-guardian/compare/v1.3.1...v2.0.0) - 2025-03-29
 - Update dependency @types/chrome to v0.0.236 by @renovate in https://github.com/daku10/github-merge-guardian/pull/22
 - add link of firefox by @daku10 in https://github.com/daku10/github-merge-guardian/pull/24
