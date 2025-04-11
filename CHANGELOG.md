@@ -1,5 +1,8 @@
 # Changelog
 
+## [v2.0.2](https://github.com/daku10/github-merge-guardian/compare/v2.0.1...v2.0.2) - 2025-04-11
+- chore(deps): update actions/create-github-app-token action to v2 by @renovate in https://github.com/daku10/github-merge-guardian/pull/121
+
 ## [v2.0.1](https://github.com/daku10/github-merge-guardian/compare/v2.0.0...v2.0.1) - 2025-03-31
 - bump strict_min_version by @daku10 in https://github.com/daku10/github-merge-guardian/pull/118
 
