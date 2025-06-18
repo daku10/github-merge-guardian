@@ -33,8 +33,9 @@ export const selectCompareBranchText: () => string | null = () => {
 }
 
 export const selectMenuButtonElement = () => {
+  // TODO: it's fragile but I have no idea how to select the button.
   return document.querySelector<HTMLButtonElement>(
-    '[aria-label="Select merge method"]'
+    '[data-component="IconButton"][data-variant="primary"][data-size="medium"]'
   )
 }
 
