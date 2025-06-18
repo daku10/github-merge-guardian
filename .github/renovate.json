@@ -1,22 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":timezone(Asia/Tokyo)",
     "group:allNonMajor"
   ],
   "labels": ["dependencies", "renovate"],
   "dependencyDashboard": true,
-  "schedule": [
-    "after 8am before 5pm on Monday"
-  ],
+  "schedule": ["after 8am before 5pm on Monday"],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
   "packageRules": [
     {
       "groupName": "markuplint",
-      "matchPackageNames": ["markuplint"],
-      "matchPackagePrefixes": ["@markuplint"]
+      "matchPackageNames": ["markuplint", "@markuplint{/,}**"]
     }
   ]
 }
