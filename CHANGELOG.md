@@ -1,5 +1,14 @@
 # Changelog
 
+## [v2.0.2](https://github.com/daku10/github-merge-guardian/compare/v2.0.1...v2.0.2) - 2025-06-29
+- chore(deps): update actions/create-github-app-token action to v2 by @renovate in https://github.com/daku10/github-merge-guardian/pull/121
+- fix: change button selector by @daku10 in https://github.com/daku10/github-merge-guardian/pull/125
+- chore(config): migrate renovate config - autoclosed by @renovate in https://github.com/daku10/github-merge-guardian/pull/124
+- chore(deps): update markuplint by @renovate in https://github.com/daku10/github-merge-guardian/pull/123
+- fix(deps): update all non-major dependencies by @renovate in https://github.com/daku10/github-merge-guardian/pull/120
+- fix(deps): update all non-major dependencies by @renovate in https://github.com/daku10/github-merge-guardian/pull/127
+- feat: use node 24 by @daku10 in https://github.com/daku10/github-merge-guardian/pull/128
+
 ## [v2.0.1](https://github.com/daku10/github-merge-guardian/compare/v2.0.0...v2.0.1) - 2025-03-31
 - bump strict_min_version by @daku10 in https://github.com/daku10/github-merge-guardian/pull/118
 
