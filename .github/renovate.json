@@ -15,5 +15,6 @@
       "groupName": "markuplint",
       "matchPackageNames": ["markuplint", "@markuplint{/,}**"]
     }
-  ]
+  ],
+  "minimumReleaseAge": "7 days"
 }
