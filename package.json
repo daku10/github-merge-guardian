@@ -34,7 +34,7 @@
     "ts-pattern": "5.9.0"
   },
   "devDependencies": {
-    "@eslint/js": "9.39.4",
+    "@eslint/js": "10.0.1",
     "@ianvs/prettier-plugin-sort-imports": "4.7.1",
     "@markuplint/jsx-parser": "4.7.19",
     "@markuplint/react-spec": "4.5.19",
@@ -45,7 +45,7 @@
     "@typescript-eslint/eslint-plugin": "8.58.2",
     "@typescript-eslint/parser": "8.58.2",
     "autoprefixer": "10.5.0",
-    "eslint": "9.39.4",
+    "eslint": "10.2.1",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
     "globals": "16.5.0",
