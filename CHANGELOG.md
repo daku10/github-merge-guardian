@@ -1,5 +1,17 @@
 # Changelog
 
+## [v2.0.3](https://github.com/daku10/github-merge-guardian/compare/v2.0.2...v2.0.3) - 2026-04-29
+- chore(deps): update actions/setup-node action to v5 by @renovate[bot] in https://github.com/daku10/github-merge-guardian/pull/132
+- chore(deps): update pnpm/action-setup action to v6 by @renovate[bot] in https://github.com/daku10/github-merge-guardian/pull/143
+- chore(deps): update actions/checkout action to v6 by @renovate[bot] in https://github.com/daku10/github-merge-guardian/pull/137
+- feat: minimumReleaseAge on renovate by @daku10 in https://github.com/daku10/github-merge-guardian/pull/144
+- chore(deps): update actions/create-github-app-token action to v3 by @renovate[bot] in https://github.com/daku10/github-merge-guardian/pull/140
+- chore(deps): update actions/setup-node action to v6 by @renovate[bot] in https://github.com/daku10/github-merge-guardian/pull/134
+- chore(deps): update dependency @types/node to v24 by @renovate[bot] in https://github.com/daku10/github-merge-guardian/pull/136
+- fix(deps): update all non-major dependencies by @renovate[bot] in https://github.com/daku10/github-merge-guardian/pull/129
+- feat: add pnpm setting by @daku10 in https://github.com/daku10/github-merge-guardian/pull/145
+- Feat/follow GitHub by @daku10 in https://github.com/daku10/github-merge-guardian/pull/146
+
 ## [v2.0.2](https://github.com/daku10/github-merge-guardian/compare/v2.0.1...v2.0.2) - 2025-06-29
 - chore(deps): update actions/create-github-app-token action to v2 by @renovate in https://github.com/daku10/github-merge-guardian/pull/121
 - fix: change button selector by @daku10 in https://github.com/daku10/github-merge-guardian/pull/125
