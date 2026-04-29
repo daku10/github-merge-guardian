@@ -22,7 +22,7 @@ export const retrieveRepositorySlug: () => [
 }
 
 export const selectRootActionsElement = () => {
-  return document.querySelector<HTMLElement>(".discussion-timeline-actions")
+  return document.querySelector<HTMLElement>("[data-testid='mergebox-partial']")
 }
 
 const normalizeText = (text: string | null | undefined) => {
