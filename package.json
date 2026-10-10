@@ -20,7 +20,7 @@
     "generate": "tcm -p 'src/**/*.module.css'",
     "format": "prettier --write src/**/*.{ts,tsx}"
   },
-  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
+  "packageManager": "pnpm@12.9.0+sha512.8f64efa0b792986ca98ae568791bcd7722807e274c4f0c1d9853c62116495c584119db98762a2a5343b1684d361b9ae26fdd16d551666d7635346d3fae830ddd",
   "dependencies": {
     "@dnd-kit/core": "6.3.1",
     "@dnd-kit/sortable": "10.0.0",
